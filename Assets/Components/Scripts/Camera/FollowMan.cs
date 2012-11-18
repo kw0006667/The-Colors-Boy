@@ -6,6 +6,7 @@ public class FollowMan : MonoBehaviour {
 	public GameObject Target;
 	
 	private Vector3 currentCameraPosition;
+	private float mathClamp;
 	
 	// Use this for initialization
 	void Start () 
