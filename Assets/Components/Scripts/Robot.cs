@@ -81,7 +81,7 @@ public class Robot : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             //if (this.baseCurrentStateInfo.Equals("Base.Runs"))
-                //this.animator.SetBool("Jump", true);
+            this.animator.SetBool("Jump", true);
 			
 			//this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.up) * 100.0f, ForceMode.Force);
         }
