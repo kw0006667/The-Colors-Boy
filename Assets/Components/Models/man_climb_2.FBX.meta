@@ -98,7 +98,59 @@ ModelImporter:
       mirror: 0
       keepAdditionalBonesAnimation: 1
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: ColliderY
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: .800000012
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .386503071
+            value: .800000012
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 1
+            value: .800000012
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
+      - name: ColliderHeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - time: 0
+            value: 1.60000002
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .386503071
+            value: 1.60000002
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .5
+            value: .5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: .641104281
+            value: .5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - time: 1
+            value: 1.79999995
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
       skeletonMaskElements: []
     isReadable: 1
   meshes:
@@ -259,8 +311,8 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .144348145, y: 0, z: .0721740723}
-        preQ: {x: -.325070739, y: .63718915, z: -.69869715, w: .011880775}
-        postQ: {x: -2.83122063e-07, y: -.719968855, z: .694006324, w: -3.05066351e-07}
+        preQ: {x: -.325070709, y: .63718909, z: -.698697209, w: .0118807741}
+        postQ: {x: -2.83122063e-07, y: -.719968855, z: .694006264, w: -2.99594831e-07}
         length: .180435255
         modified: 1
     - boneName: Bip001 L Forearm
@@ -279,8 +331,8 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .178988591, y: 0, z: .0894942954}
-        preQ: {x: -.64261651, y: .765946746, z: -.0151753863, w: .0118014943}
-        postQ: {x: -6.89178705e-08, y: .999831378, z: .0183602031, w: 9.59262252e-08}
+        preQ: {x: -.64261651, y: .765946686, z: -.015175337, w: .0118015399}
+        postQ: {x: -6.98491931e-08, y: .999831378, z: .0183602329, w: 9.12696194e-08}
         length: .223735809
         modified: 1
     - boneName: Bip001 L Hand
@@ -299,8 +351,8 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .0894942954, y: 0, z: .0447471477}
-        preQ: {x: -2.04890966e-08, y: -.719968796, z: .694006383, w: -1.17270247e-07}
-        postQ: {x: .00044890173, y: .0187504385, z: -.9995116, w: -.0249932129}
+        preQ: {x: -1.67638063e-08, y: -.719968796, z: .694006324, w: -1.1459997e-07}
+        postQ: {x: .000448902836, y: .0187504683, z: -.9995116, w: -.0249932148}
         length: .111867905
         modified: 1
     skeleton:
@@ -316,7 +368,7 @@ ModelImporter:
       transformModified: 1
     - name: Bip001 Footsteps
       position: {x: -0, y: 0, z: -.620983183}
-      rotation: {x: 0, y: 0, z: -.707106233, w: .707107186}
+      rotation: {x: 0, y: 0, z: -.707106292, w: .707107246}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: Bip001 Pelvis
@@ -431,7 +483,7 @@ ModelImporter:
       transformModified: 1
     - name: Bip001 R UpperArm
       position: {x: -.186183229, y: 5.14423739e-08, z: -7.21240241e-08}
-      rotation: {x: .0218193009, y: .119275413, z: .00368915964, w: -.992614508}
+      rotation: {x: .0218193009, y: .119275428, z: .0036891601, w: -.992614627}
       scale: {x: 1.00000012, y: .999999702, z: 1}
       transformModified: 1
     - name: Bip001 R Forearm
@@ -441,7 +493,7 @@ ModelImporter:
       transformModified: 1
     - name: Bip001 R Hand
       position: {x: -.223735869, y: -3.05711616e-08, z: -6.29345891e-08}
-      rotation: {x: -.706604242, y: .0176828131, z: -.0176687613, w: -.707167149}
+      rotation: {x: -.706604302, y: .017682815, z: -.0176687632, w: -.707167208}
       scale: {x: 1.00000024, y: 1.00000024, z: 1.00000024}
       transformModified: 1
     handles: []

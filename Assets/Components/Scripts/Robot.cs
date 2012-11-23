@@ -15,6 +15,8 @@ public class Robot : MonoBehaviour
 
     private AnimatorStateInfo baseCurrentStateInfo;
 
+    private CapsuleCollider col;
+
 
     // Use this for initialization
     void Start()
@@ -28,6 +30,7 @@ public class Robot : MonoBehaviour
         this.axisValueABS = 0.0f;
 
         this.animator = this.GetComponent<Animator>();
+        this.col = this.GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -99,6 +102,55 @@ public class Robot : MonoBehaviour
         //    //this.rigidbody.velocity = this.transform.TransformDirection(Vector3.left) * 10;
         //    this.rigidbody.position += this.transform.TransformDirection(Vector3.left) * 0.01f;
         //}
+    }
+
+    void FixedUpdate()
+    {
+        this.axisValue = Input.GetAxis("Horizontal");
+        this.axisValueABS = Mathf.Abs(this.axisValue);
+
+        if (this.animator)
+        {
+            this.animator.SetFloat("Speed", this.axisValueABS);
+
+            this.baseCurrentStateInfo = this.animator.GetCurrentAnimatorStateInfo(0);
+
+            // Check the animator is forward or backward
+            if (this.axisValue > 0.0f)
+            {
+                if (this.forwardKey)
+                {
+                    this.rigidbody.transform.rotation *= Quaternion.AngleAxis(-180.0f, Vector3.up);
+                    this.forwardKey = false;
+                    this.backwardKey = true;
+                }
+            }
+            if (this.axisValue < 0.0f)
+            {
+                if (this.backwardKey)
+                {
+                    this.rigidbody.transform.rotation *= Quaternion.AngleAxis(180.0f, Vector3.up);
+                    this.backwardKey = false;
+                    this.forwardKey = true;
+                }
+            }
+
+            if (this.baseCurrentStateInfo.IsName("Base.Run"))
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    this.animator.SetBool("Jump", true);
+                }
+            }
+            else if (this.baseCurrentStateInfo.IsName("Base.Jump") && !this.animator.IsInTransition(0))
+            {
+                this.animator.SetBool("Jump", false);
+
+
+                this.col.center = new Vector3(0, this.animator.GetFloat("ColliderY"), 0);
+                this.col.height = this.animator.GetFloat("ColliderHeight");
+            }
+        }
     }
 
     //bool IsFloor()
