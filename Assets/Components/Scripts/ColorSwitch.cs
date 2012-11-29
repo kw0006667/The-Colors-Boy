@@ -44,6 +44,9 @@ public class ColorSwitch : MonoBehaviour
         {
             Renderer rend = col.GetComponentsInChildren<Renderer>()[0];
             rend.material.SetColor("_Color", this.currentColor);
+
+            Light light = col.GetComponentsInChildren<Light>()[0];
+            light.color = this.currentColor;
         }
     }
 }

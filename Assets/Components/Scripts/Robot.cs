@@ -5,9 +5,13 @@ public class Robot : MonoBehaviour
 {
     public float Velocity;
 
-    public bool forwardKey;
-    public bool backwardKey;
-	public bool jumpKey;
+    public bool ForwardKey;
+    public bool BackwardKey;
+	public bool JumpKey;
+
+    // if the Man can jump(climb)
+    private bool canJump;
+
     private float axisValue;
     private float axisValueABS;
 
@@ -23,9 +27,10 @@ public class Robot : MonoBehaviour
     {
         this.Velocity = 0.0f;
 
-        this.forwardKey = false;
-        this.backwardKey = true;
-		this.jumpKey = false;
+        this.ForwardKey = false;
+        this.BackwardKey = true;
+		this.JumpKey = false;
+        this.canJump = false;
         this.axisValue = 0.0f;
         this.axisValueABS = 0.0f;
 
@@ -36,58 +41,46 @@ public class Robot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.Velocity = this.rigidbody.velocity.magnitude;
-        //this.GetInput();
-        this.axisValue = Input.GetAxis("Horizontal");
-        this.axisValueABS = Mathf.Abs(this.axisValue);
+        //this.Velocity = this.rigidbody.velocity.magnitude;
+        ////this.GetInput();
+        //this.axisValue = Input.GetAxis("Horizontal");
+        //this.axisValueABS = Mathf.Abs(this.axisValue);
 
-        this.baseCurrentStateInfo = this.animator.GetCurrentAnimatorStateInfo(0);
+        //this.baseCurrentStateInfo = this.animator.GetCurrentAnimatorStateInfo(0);
 
-        this.animator.SetFloat("Speed", this.axisValueABS);
+        //this.animator.SetFloat("Speed", this.axisValueABS);
 
-        if (this.axisValue > 0.0f)
-        {
-            if (this.forwardKey)
-            {
-                this.rigidbody.transform.rotation *= Quaternion.AngleAxis(-180.0f, Vector3.up);
-                this.forwardKey = false;
-                this.backwardKey = true;
-            }
-        }
-        if (this.axisValue < 0.0f)
-        {
-            if (this.backwardKey)
-            {
-                this.rigidbody.transform.rotation *= Quaternion.AngleAxis(180.0f, Vector3.up);
-                this.backwardKey = false;
-                this.forwardKey = true;
-            }
-        }
-
-        //if (Input.GetButtonDown("Jump"))
+        //if (this.axisValue > 0.0f)
         //{
-        //    this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.up) * 200);
+        //    if (this.ForwardKey)
+        //    {
+        //        this.rigidbody.transform.rotation *= Quaternion.AngleAxis(-180.0f, Vector3.up);
+        //        this.ForwardKey = false;
+        //        this.BackwardKey = true;
+        //    }
         //}
-        //if (this.forwardKey)
+        //if (this.axisValue < 0.0f)
         //{
-        //    this.animator.SetFloat("Speed", this.axisValue);
-        //    this.rigidbody.position += this.animator.deltaPosition * this.axisValue;
-        //    //this.rigidbody.position += this.transform.TransformDirection(Vector3.right) * this.axisValue;
-        //    //this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.right) * this.axisValue * 1000.0f);
+        //    if (this.BackwardKey)
+        //    {
+        //        this.rigidbody.transform.rotation *= Quaternion.AngleAxis(180.0f, Vector3.up);
+        //        this.BackwardKey = false;
+        //        this.ForwardKey = true;
+        //    }
         //}
 		
-		if (Input.GetButtonDown("Jump"))
-		{
-			this.jumpKey = true;
-		}
+        //if (Input.GetButtonDown("Jump"))
+        //{
+        //    this.JumpKey = true;
+        //}
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            //if (this.baseCurrentStateInfo.Equals("Base.Runs"))
-            this.animator.SetBool("Jump", true);
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    //if (this.baseCurrentStateInfo.Equals("Base.Runs"))
+        //    this.animator.SetBool("Jump", true);
 			
-			//this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.up) * 100.0f, ForceMode.Force);
-        }
+        //    //this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.up) * 100.0f, ForceMode.Force);
+        //}
 
         //if (Mathf.Abs(this.rigidbody.velocity.magnitude) > 5)
         //    this.rigidbody.velocity = this.transform.TransformDirection(Vector3.right) * this.axisValue * 100.0f;
@@ -118,24 +111,24 @@ public class Robot : MonoBehaviour
             // Check the animator is forward or backward
             if (this.axisValue > 0.0f)
             {
-                if (this.forwardKey)
+                if (this.ForwardKey)
                 {
                     this.rigidbody.transform.rotation *= Quaternion.AngleAxis(-180.0f, Vector3.up);
-                    this.forwardKey = false;
-                    this.backwardKey = true;
+                    this.ForwardKey = false;
+                    this.BackwardKey = true;
                 }
             }
             if (this.axisValue < 0.0f)
             {
-                if (this.backwardKey)
+                if (this.BackwardKey)
                 {
                     this.rigidbody.transform.rotation *= Quaternion.AngleAxis(180.0f, Vector3.up);
-                    this.backwardKey = false;
-                    this.forwardKey = true;
+                    this.BackwardKey = false;
+                    this.ForwardKey = true;
                 }
             }
 
-            if (this.baseCurrentStateInfo.IsName("Base.Run"))
+            if (this.baseCurrentStateInfo.IsName("Base.Run") && this.canJump)
             {
                 if (Input.GetButtonDown("Jump"))
                 {
@@ -164,12 +157,12 @@ public class Robot : MonoBehaviour
         if (horizonValue != 0.0f)
         {
             this.axisValue = horizonValue > 0.0f ? 0.05f : -0.05f;
-            this.forwardKey = true;
+            this.ForwardKey = true;
         }
         else
         {
             this.axisValue = 0.0f;
-            this.forwardKey = false;
+            this.ForwardKey = false;
         }
     }
 }
