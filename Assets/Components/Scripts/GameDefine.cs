@@ -12,7 +12,7 @@ public class GameDefine
         White = 4
     };
 
-
+	public const string PLAYERNAME = "Player";
 }
 
 

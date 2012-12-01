@@ -10,7 +10,7 @@ public class Robot : MonoBehaviour
 	public bool JumpKey;
 
     // if the Man can jump(climb)
-    private bool canJump;
+    public bool canJump;
 
     private float axisValue;
     private float axisValueABS;
@@ -128,7 +128,10 @@ public class Robot : MonoBehaviour
                 }
             }
 
-            if (this.baseCurrentStateInfo.IsName("Base.Run") && this.canJump)
+            if ( (!this.baseCurrentStateInfo.IsName("Base.Jump") 
+				|| this.baseCurrentStateInfo.IsName("Base.Idle") 
+				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
+				|| this.baseCurrentStateInfo.IsName("Base.Run")) && this.canJump)
             {
                 if (Input.GetButtonDown("Jump"))
                 {
@@ -165,4 +168,9 @@ public class Robot : MonoBehaviour
             this.ForwardKey = false;
         }
     }
+	
+	public void SetCanJump(bool isCanJump)
+	{
+		this.canJump = isCanJump;
+	}
 }
