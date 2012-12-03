@@ -178,10 +178,10 @@ ModelImporter:
     clipAnimations:
     - name: RunAvoid_ToRight_Both_2
       takeName: _27B_a_U1_M_P_RunAvoid_ToRight_Both_Fb_p0_No_0_3
-      firstFrame: 235
-      lastFrame: 321
+      firstFrame: 236
+      lastFrame: 322
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -1
       level: 0
       cycleOffset: 0
       loop: 0

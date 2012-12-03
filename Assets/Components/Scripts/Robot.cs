@@ -146,6 +146,22 @@ public class Robot : MonoBehaviour
                 this.col.center = new Vector3(0, this.animator.GetFloat("ColliderY"), 0);
                 this.col.height = this.animator.GetFloat("ColliderHeight");
             }
+			
+			if (!this.baseCurrentStateInfo.IsName("Base.RunAvoid")
+				|| this.baseCurrentStateInfo.IsName("Base.Jump") 
+				|| this.baseCurrentStateInfo.IsName("Base.Idle") 
+				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
+				|| this.baseCurrentStateInfo.IsName("Base.Run"))
+			{
+				if (Input.GetButtonDown("Fire1"))
+				{
+					this.animator.SetBool("Avoid", true);	
+				}
+			}
+			else if (this.baseCurrentStateInfo.IsName("Base.RunAvoid") && !this.animator.IsInTransition(0))
+			{
+				this.animator.SetBool("Avoid", false);	
+			}
         }
     }
 
