@@ -174,18 +174,18 @@ ModelImporter:
     clipAnimations:
     - name: RunForward_NtrlFaceFwd
       takeName: _24_a_U1_M_P_RunForward_NtrlFaceFwd__Fb_p0_No_0_PJ_10
-      firstFrame: 88
-      lastFrame: 575
+      firstFrame: 150.600006
+      lastFrame: 168.199997
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -253,8 +253,8 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .339271516, y: 0, z: .169635758}
-        preQ: {x: .0215928201, y: .723237514, z: .0354165733, w: .689352512}
-        postQ: {x: -.538012147, y: .573273659, z: -.421227455, w: .452180833}
+        preQ: {x: .0215928163, y: .723237514, z: .0354165956, w: .689352393}
+        postQ: {x: -.538012147, y: .573273718, z: -.421227455, w: .452180833}
         length: .424089521
         modified: 1
     - boneName: RightLeg
@@ -412,10 +412,10 @@ ModelImporter:
       limit:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
-        value: {x: .0651871487, y: 0, z: .0325935744}
-        preQ: {x: .757332444, y: .00106434629, z: .652993977, w: .0067214896}
-        postQ: {x: .756254315, y: .00383036979, z: .654205263, w: .00894872099}
-        length: .0814839676
+        value: {x: .0651871413, y: 0, z: .0325935706}
+        preQ: {x: .757332444, y: .00106435141, z: .652993977, w: .00672149472}
+        postQ: {x: .756254315, y: .00383037492, z: .654205263, w: .00894872658}
+        length: .0814839602
         modified: 1
     - boneName: RightToes
       humanName: RightToes
@@ -544,7 +544,7 @@ ModelImporter:
         max: {x: 0, y: 0, z: 45}
         value: {x: .02037891, y: 0, z: .010189455}
         preQ: {x: .0946078971, y: .327427596, z: .892303467, w: -.296031594}
-        postQ: {x: .183217987, y: .227438673, z: .761311769, w: .578884423}
+        postQ: {x: .183217973, y: .227438703, z: .761311829, w: .578884423}
         length: .0254736468
         modified: 1
     - boneName: LeftHandRing1
@@ -694,7 +694,7 @@ ModelImporter:
         max: {x: 0, y: 0, z: 45}
         value: {x: .0203788653, y: 0, z: .0101894327}
         preQ: {x: -.169445813, y: -.049526833, z: -.414953977, w: .892551541}
-        postQ: {x: .126014546, y: .0953491703, z: -.50619334, w: -.84781903}
+        postQ: {x: .126014546, y: .0953491628, z: -.50619328, w: -.84781903}
         length: .0254735909
         modified: 1
     - boneName: RightHandRing1
@@ -780,7 +780,7 @@ ModelImporter:
       transformModified: 1
     - name: LeftLeg
       position: {x: -.0205504987, y: -.409129977, z: -.000718647963}
-      rotation: {x: .0928943083, y: -.104996614, z: -.0173960868, w: .989971459}
+      rotation: {x: .0928943157, y: -.104996629, z: -.0173960887, w: .989971578}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: LeftFoot
@@ -870,7 +870,7 @@ ModelImporter:
       transformModified: 1
     - name: LeftHandMiddle3
       position: {x: -.0339648277, y: -1.21844392e-08, z: 3.75310893e-09}
-      rotation: {x: -.0151140289, y: .00170164439, z: .607184827, w: .794414878}
+      rotation: {x: -.0151140308, y: .00170164462, z: .607184887, w: .794414997}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: LeftHandPinky1
@@ -1095,7 +1095,7 @@ ModelImporter:
       transformModified: 1
     - name: RightHandMiddle3
       position: {x: .0330724716, y: -.00754753686, z: .00168984616}
-      rotation: {x: .0151140243, y: -.00170164218, z: -.607184827, w: .794414878}
+      rotation: {x: .0151140261, y: -.00170164241, z: -.607184887, w: .794414997}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: RightHandPinky1

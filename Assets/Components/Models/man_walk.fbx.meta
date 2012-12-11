@@ -81,18 +81,18 @@ ModelImporter:
     clipAnimations:
     - name: Walk
       takeName: Take 001
-      firstFrame: 28
+      firstFrame: 26
       lastFrame: 116
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -.00200000009
       level: 0
       cycleOffset: 0
       loop: 0
       loopBlend: 1
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -241,7 +241,7 @@ ModelImporter:
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .148946464, y: 0, z: .074473232}
         preQ: {x: -.564002156, y: .42531088, z: .422710866, w: .567739189}
-        postQ: {x: -2.98023224e-08, y: .704557359, z: -.70964694, w: 9.58680175e-08}
+        postQ: {x: -2.23517418e-08, y: .704557419, z: -.709646881, w: 1.18277967e-07}
         length: .186183155
         modified: 1
     - boneName: Bip001 L UpperArm
@@ -260,8 +260,8 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .144348308, y: 0, z: .0721741542}
-        preQ: {x: -.325070649, y: .63718915, z: -.698697209, w: .0118809789}
-        postQ: {x: 4.74974513e-07, y: -.719968736, z: .694006443, w: 2.08325218e-07}
+        preQ: {x: -.325070769, y: .63718915, z: -.69869709, w: .011880911}
+        postQ: {x: 5.71832004e-07, y: -.719968796, z: .694006324, w: 3.12691526e-07}
         length: .180435464
         modified: 1
     - boneName: Bip001 L Forearm
@@ -280,8 +280,8 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .17898874, y: 0, z: .0894943699}
-        preQ: {x: -.642616332, y: .765946865, z: -.0151737584, w: .011802041}
-        postQ: {x: 1.78813934e-07, y: .999831319, z: .018360028, w: 9.13627389e-07}
+        preQ: {x: -.642616272, y: .765946925, z: -.0151736801, w: .0118021546}
+        postQ: {x: 1.86264501e-07, y: .999831378, z: .0183601771, w: 9.35047808e-07}
         length: .223736003
         modified: 1
     - boneName: Bip001 L Hand
@@ -300,8 +300,8 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .0894943699, y: 0, z: .044747185}
-        preQ: {x: -7.72997851e-07, y: -.719968677, z: .694006503, w: -5.18517538e-07}
-        postQ: {x: .000449140003, y: .0187502727, z: -.999511659, w: -.0249924008}
+        preQ: {x: -7.9348689e-07, y: -.719968736, z: .694006383, w: -5.29689714e-07}
+        postQ: {x: .000449151237, y: .0187503919, z: -.999511659, w: -.0249923784}
         length: .111868002
         modified: 1
     - boneName: Bip001 HeadNub

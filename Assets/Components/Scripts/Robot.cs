@@ -41,60 +41,7 @@ public class Robot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //this.Velocity = this.rigidbody.velocity.magnitude;
-        ////this.GetInput();
-        //this.axisValue = Input.GetAxis("Horizontal");
-        //this.axisValueABS = Mathf.Abs(this.axisValue);
-
-        //this.baseCurrentStateInfo = this.animator.GetCurrentAnimatorStateInfo(0);
-
-        //this.animator.SetFloat("Speed", this.axisValueABS);
-
-        //if (this.axisValue > 0.0f)
-        //{
-        //    if (this.ForwardKey)
-        //    {
-        //        this.rigidbody.transform.rotation *= Quaternion.AngleAxis(-180.0f, Vector3.up);
-        //        this.ForwardKey = false;
-        //        this.BackwardKey = true;
-        //    }
-        //}
-        //if (this.axisValue < 0.0f)
-        //{
-        //    if (this.BackwardKey)
-        //    {
-        //        this.rigidbody.transform.rotation *= Quaternion.AngleAxis(180.0f, Vector3.up);
-        //        this.BackwardKey = false;
-        //        this.ForwardKey = true;
-        //    }
-        //}
-		
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    this.JumpKey = true;
-        //}
-
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    //if (this.baseCurrentStateInfo.Equals("Base.Runs"))
-        //    this.animator.SetBool("Jump", true);
-			
-        //    //this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.up) * 100.0f, ForceMode.Force);
-        //}
-
-        //if (Mathf.Abs(this.rigidbody.velocity.magnitude) > 5)
-        //    this.rigidbody.velocity = this.transform.TransformDirection(Vector3.right) * this.axisValue * 100.0f;
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    //this.rigidbody.velocity = this.transform.TransformDirection(Vector3.right) * 10;
-        //    this.rigidbody.position += this.transform.TransformDirection(Vector3.right) * 0.01f;
-        //}
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    //this.rigidbody.AddForce(this.transform.TransformDirection(Vector3.left) * 100, ForceMode.Force);
-        //    //this.rigidbody.velocity = this.transform.TransformDirection(Vector3.left) * 10;
-        //    this.rigidbody.position += this.transform.TransformDirection(Vector3.left) * 0.01f;
-        //}
+        
     }
 
     void FixedUpdate()
@@ -153,7 +100,7 @@ public class Robot : MonoBehaviour
 				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
 				|| this.baseCurrentStateInfo.IsName("Base.Run"))
 			{
-				if (Input.GetButtonDown("Fire1"))
+				if (Input.GetKeyDown(KeyCode.LeftShift))
 				{
 					this.animator.SetBool("Avoid", true);	
 				}

@@ -174,8 +174,8 @@ ModelImporter:
     clipAnimations:
     - name: Idle_JumpDownLow_Idle
       takeName: _197_Idle_JumpDownLow_Idle
-      firstFrame: 75
-      lastFrame: 260
+      firstFrame: 150
+      lastFrame: 231
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
