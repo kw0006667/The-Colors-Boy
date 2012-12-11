@@ -11,6 +11,9 @@ public class Robot : MonoBehaviour
 
     // if the Man can jump(climb)
     public bool canJump;
+	
+	// if the Man can Jump Down
+	public bool canJumpDown;
 
     private float axisValue;
     private float axisValueABS;
@@ -31,6 +34,7 @@ public class Robot : MonoBehaviour
         this.BackwardKey = true;
 		this.JumpKey = false;
         this.canJump = false;
+		this.canJumpDown = false;
         this.axisValue = 0.0f;
         this.axisValueABS = 0.0f;
 
@@ -58,14 +62,14 @@ public class Robot : MonoBehaviour
             // Check the animator is forward or backward
             if (this.axisValue > 0.0f)
             {
-                if (this.ForwardKey)
+                if (this.ForwardKey && !this.baseCurrentStateInfo.IsName("Base.Jump") && !this.baseCurrentStateInfo.IsName("Base.RunAvoid") )
                 {
                     this.rigidbody.transform.rotation *= Quaternion.AngleAxis(-180.0f, Vector3.up);
                     this.ForwardKey = false;
                     this.BackwardKey = true;
                 }
             }
-            if (this.axisValue < 0.0f)
+            if (this.axisValue < 0.0f && !this.baseCurrentStateInfo.IsName("Base.Jump")  && !this.baseCurrentStateInfo.IsName("Base.RunAvoid"))
             {
                 if (this.BackwardKey)
                 {
@@ -109,6 +113,22 @@ public class Robot : MonoBehaviour
 			{
 				this.animator.SetBool("Avoid", false);	
 			}
+			
+			if ((!this.baseCurrentStateInfo.IsName("Base.JumpDown")
+				|| !this.baseCurrentStateInfo.IsName("Base.RunAvoid")
+				|| !this.baseCurrentStateInfo.IsName("Base.Jump") 
+				|| this.baseCurrentStateInfo.IsName("Base.Idle") 
+				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
+				|| this.baseCurrentStateInfo.IsName("Base.Run")) && this.canJumpDown)
+			{
+				this.animator.SetBool("JumpDown", true);
+			}
+			else if (this.baseCurrentStateInfo.IsName("Base.JumpDown") && !this.animator.IsInTransition(0))
+			{
+				this.animator.SetBool("JumpDown", false);
+				
+				
+			}
         }
     }
 
@@ -135,5 +155,10 @@ public class Robot : MonoBehaviour
 	public void SetCanJump(bool isCanJump)
 	{
 		this.canJump = isCanJump;
+	}
+	
+	public void SetCanJumpDown(bool isCanJumpDown)
+	{
+		this.canJumpDown = isCanJumpDown;	
 	}
 }
