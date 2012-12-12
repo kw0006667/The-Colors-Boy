@@ -93,7 +93,6 @@ public class Robot : MonoBehaviour
             {
                 this.animator.SetBool("Jump", false);
 
-
                 this.col.center = new Vector3(0, this.animator.GetFloat("ColliderY"), 0);
                 this.col.height = this.animator.GetFloat("ColliderHeight");
             }
