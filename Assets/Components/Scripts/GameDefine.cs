@@ -13,7 +13,20 @@ public class GameDefine
     };
 
 	public const string PLAYERNAME = "Player";
+
+    public const string TUTORIALSCENE_1 = "TutorialScene_1";
+    public const string TUTORIALSCENE_2 = "TutorialScene_2";
+    public const string TUTORIALSCENE_3 = "TutorialScene_3";
+
+    public enum ScenesName
+    {
+        TutorialScene_1 = 1,
+        TutorialScene_2 = 2,
+        TutorialScene_3 = 3
+    };
 }
+
+
 
 
 public class Compare

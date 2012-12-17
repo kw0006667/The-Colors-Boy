@@ -95,7 +95,7 @@ public class Robot : MonoBehaviour
 				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
 				|| this.baseCurrentStateInfo.IsName("Base.Run")) && this.canJump)
             {
-                if (Input.GetButtonDown("Jump"))
+                if (Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1"))
                 {
                     this.animator.SetBool("Jump", true);
                 }
@@ -114,7 +114,7 @@ public class Robot : MonoBehaviour
 				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
 				|| this.baseCurrentStateInfo.IsName("Base.Run"))
 			{
-				if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire1"))
+				if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire3"))
 				{
 					this.animator.SetBool("Avoid", true);	
 				}
@@ -139,7 +139,6 @@ public class Robot : MonoBehaviour
 				
 				
 			}
-            print(this.baseCurrentStateInfo.length.ToString());
         }
     }
 
