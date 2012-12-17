@@ -14,15 +14,19 @@ public class GameDefine
 
 	public const string PLAYERNAME = "Player";
 
-    public const string TUTORIALSCENE_1 = "TutorialScene_1";
-    public const string TUTORIALSCENE_2 = "TutorialScene_2";
-    public const string TUTORIALSCENE_3 = "TutorialScene_3";
+    public const string TUTORIALSCENE_1 = "TutorialScene-1";
+    public const string TUTORIALSCENE_2 = "TutorialScene-2";
+    public const string TUTORIALSCENE_3 = "TutorialScene-3";
+    public const string SCENE_1 = "3_Scene";
+    public const string SCENE_2 = "4_Scene";
 
     public enum ScenesName
     {
         TutorialScene_1 = 1,
         TutorialScene_2 = 2,
-        TutorialScene_3 = 3
+        TutorialScene_3 = 3,
+        Scene_3 = 4,
+        Scene_4 = 5
     };
 }
 

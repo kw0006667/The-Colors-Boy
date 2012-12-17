@@ -109,10 +109,10 @@ public class Robot : MonoBehaviour
             }
 			
 			if (!this.baseCurrentStateInfo.IsName("Base.RunAvoid")
-				|| this.baseCurrentStateInfo.IsName("Base.Jump") 
-				|| this.baseCurrentStateInfo.IsName("Base.Idle") 
-				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
-				|| this.baseCurrentStateInfo.IsName("Base.Run"))
+				&& !this.baseCurrentStateInfo.IsName("Base.Jump") 
+				&& !this.baseCurrentStateInfo.IsName("Base.Idle") 
+				&& !this.baseCurrentStateInfo.IsName("Base.Walk") 
+				&& this.baseCurrentStateInfo.IsName("Base.Run"))
 			{
 				if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire3"))
 				{
