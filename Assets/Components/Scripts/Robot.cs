@@ -15,6 +15,8 @@ public class Robot : MonoBehaviour
 	// if the Man can Jump Down
 	public bool canJumpDown;
 
+    public float AnimatorSpeed = 1.0f;
+
     private float axisValue;
     private float axisValueABS;
 
@@ -39,6 +41,7 @@ public class Robot : MonoBehaviour
         this.axisValueABS = 0.0f;
 
         this.animator = this.GetComponent<Animator>();
+        this.animator.speed = this.AnimatorSpeed;
         this.col = this.GetComponent<CapsuleCollider>();
     }
 
@@ -79,6 +82,14 @@ public class Robot : MonoBehaviour
                 }
             }
 
+            if (this.baseCurrentStateInfo.IsName("Base.Run"))
+            {
+                //Quaternion currentRotation = this.transform.rotation;
+                //this.transform.rotation = new Quaternion(0.0f, currentRotation.y, currentRotation.z, currentRotation.w);
+                Vector3 currentPosition = this.transform.position;
+                this.transform.position = new Vector3(0.0f, currentPosition.y, currentPosition.z);
+            }
+
             if ( (!this.baseCurrentStateInfo.IsName("Base.Jump") 
 				|| this.baseCurrentStateInfo.IsName("Base.Idle") 
 				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
@@ -103,7 +114,7 @@ public class Robot : MonoBehaviour
 				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
 				|| this.baseCurrentStateInfo.IsName("Base.Run"))
 			{
-				if (Input.GetKeyDown(KeyCode.LeftShift))
+				if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire1"))
 				{
 					this.animator.SetBool("Avoid", true);	
 				}
@@ -117,8 +128,8 @@ public class Robot : MonoBehaviour
 				|| !this.baseCurrentStateInfo.IsName("Base.RunAvoid")
 				|| !this.baseCurrentStateInfo.IsName("Base.Jump") 
 				|| this.baseCurrentStateInfo.IsName("Base.Idle") 
-				|| this.baseCurrentStateInfo.IsName("Base.Walk") 
-				|| this.baseCurrentStateInfo.IsName("Base.Run")) && this.canJumpDown)
+				|| this.baseCurrentStateInfo.IsName("Base.Walk")
+                || this.baseCurrentStateInfo.IsName("Base.Run")) && this.canJumpDown)
 			{
 				this.animator.SetBool("JumpDown", true);
 			}
@@ -128,6 +139,7 @@ public class Robot : MonoBehaviour
 				
 				
 			}
+            print(this.baseCurrentStateInfo.length.ToString());
         }
     }
 
@@ -149,6 +161,11 @@ public class Robot : MonoBehaviour
             this.axisValue = 0.0f;
             this.ForwardKey = false;
         }
+    }
+
+    public float GetSpeed()
+    {
+        return this.axisValue;
     }
 	
 	public void SetCanJump(bool isCanJump)
